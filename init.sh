@@ -10,9 +10,9 @@ if [ $1 = "y" ]; then
     sed -i -e 's#^PublicKey.*#'PublicKey\ =\ ${server_public_key}'#' client.tpl
     sed -i -e 's#^PrivateKey.*#'PrivateKey\ =\ ${server_private_key}'#' server.tpl
     echo 172.16.0.{2..253} >ipaddrs.txt
-    echo 172.16.1.{2..253} >>ipaddrs.txt
-    echo 172.16.2.{2..253} >>ipaddrs.txt
-    echo 172.16.3.{2..253} >>ipaddrs.txt
+    #echo 172.16.1.{2..253} >>ipaddrs.txt
+    #echo 172.16.2.{2..253} >>ipaddrs.txt
+    #echo 172.16.3.{2..253} >>ipaddrs.txt
     sed -i 's# #\n#g' ipaddrs.txt
     wc -l ipaddrs.txt
     sysctl -w net.ipv4.ip_forward=1
