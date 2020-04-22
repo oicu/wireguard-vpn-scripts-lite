@@ -94,12 +94,12 @@ or
 只显示配置名和IP地址：
 
 ```
-./list-users.sh
+./wg-users.sh
 ```
 
 
 显示详细链接信息：
 
 ```
-./wg-users.sh
+./wg-users.sh -v
 ```
