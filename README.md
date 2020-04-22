@@ -85,3 +85,21 @@ or
 ```
 ./delclient.sh peers/myiPhone.conf
 ```
+
+## 7. 查看用户列表
+
+扩展一下 `wg` 命令，方便查看用户配置及对应的 IP 地址。
+
+
+只显示配置名和IP地址：
+
+```
+./list-users.sh
+```
+
+
+显示详细链接信息：
+
+```
+./wg-users.sh
+```
