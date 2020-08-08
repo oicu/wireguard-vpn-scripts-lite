@@ -4,7 +4,7 @@ subspace 太难用，部署还麻烦，还不如用 shell 写一套脚本。
 
 这个是简化版，去掉了 <del>从地址池自动分配IP</del>、iptables nat设置、允许访问内网IP段、<del>生成客户端配置的二维码图片、把二维码</del>和clients/xxx.conf给用户发邮件 等功能。
 
-默认使用网段 `172.16.0.0/24`，如果需要更多的客户端IP地址，可修改 `init.sh` `wg-users.sh` `client.tpl` 里的IP地址池及掩码。
+默认使用网段 `172.16.0.0/24`，如果需要更多的客户端IP地址，可修改 `init.sh` `client.tpl` 里的IP地址池及掩码。
 
 ## 0. 安装依赖
 
