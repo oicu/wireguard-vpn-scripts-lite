@@ -6,10 +6,10 @@ if [ $line -eq 0 ]; then
     exit 1
 fi
 
-list=$(grep "172.16.0.*24" clients/*.conf 2>/dev/null | \
+list=$(grep -PHro "^Address = (\d{1,3}.){3}\d{1,3}/\d{1,2}" clients/*.conf 2>/dev/null | \
     sed -e "s#clients/##g" \
         -e "s#.conf:Address = #\t#g" \
-        -e "s#/24##g" | \
+        -e "s#/[0-9]\{1,2\}##g" | \
     awk '{print $2,"\t",$1}' | \
     sort -n -t "." -k 4)
 
@@ -23,5 +23,7 @@ if [ "$1" = "-v" ]; then
         [ $icount = $line ] && echo "$file"
     done
 else
+    echo "Usage: $(basename $0) [-v]"
+    echo
     echo "$list"
 fi
